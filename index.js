@@ -34,11 +34,26 @@ const characters = require('./data/swapi');
  *
  */
 
-function listAllCharacters() {}
+function listAllCharacters() {
+  let starWarsChars = []
 
+  // if(results.length === 0)
+  //return 0
+
+  for(let character of characters){
+    starWarsChars.push(character["name"])
+  }
+
+  // if(starWarsChars.length === 0 || characters.length === 0){
+  //   starWarsChars.push(0)
+  // }
+
+  return (starWarsChars)
+}
 //UNCOMMENT THE LINES BELOW TO TEST YOUR SOLUTION
-// console.log(listAllCharacters([]));
-// console.log(listAllCharacters(characters));
+    console.log(listAllCharacters([]));
+  // console.log(listAllCharacters(characters));
+
 
 /**
  * averageHeightOfAllCharacters()
@@ -51,7 +66,23 @@ function listAllCharacters() {}
  * No example for this one. You should be able to find the average at this point
  */
 
-function averageHeightOfAllCharacters() {}
+function averageHeightOfAllCharacters() {
+  let strHeight = ""
+  let charHeight = 0
+  let totalHeight = 0
+  let avgHeight = 0
+  let counter = 0
+
+  for(let character of characters){
+    strHeight = (character["height"])
+    charHeight = +strHeight
+    totalHeight = totalHeight + charHeight
+    counter++
+  }
+   avgHeight = totalHeight/counter
+
+   return avgHeight
+}
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION
 //console.log(averageHeightOfAllCharacters(characters))
@@ -76,11 +107,55 @@ function averageHeightOfAllCharacters() {}
  *
  */
 
-function countByEyeColor() {}
+function countByEyeColor() {
+  
+  let iColors = {}
+  let colorNum = 0
+  let blues = 0
+  let yellows = 0
+  let reds = 0 
+  let browns = 0 
+  let blue_grays = 0
+    
+      for (char of characters){
+        //eyeColor = (char["eye_color"])
+        iColors[char["eye_color"]] = 0
+       // iColors[eyeColor] = 0  
+      }
+       //console.log(iColors)
+        
+        for (char of characters){
+          //console.log("char eye-color", char["eye_color"])
+          let color = char["eye_color"]
+           if(color === "blue") {
+             blues = blues + 1
+             iColors["blue"]= blues
+           }
+           if(color === "yellow") {
+             yellows++
+             iColors.yellow = yellows
+           }
+           if(color === "red") {
+             reds++
+             iColors.red = reds
+           }
+           if(color === "brown") {
+             browns++
+             iColors.brown = browns
+           }          
+           if(color === "blue-gray") {
+             blue_grays++
+             iColors["blue-gray"] = blue_grays
+           }       
+         }
+
+   return iColors
+
+}
 
 //UNCOMMENT THE LINES BELOW TO TEST YOUR SOLUTION
 // console.log(countByEyeColor([]))
-// console.log(countByEyeColor(characters));
+ console.log(countByEyeColor(characters));
 
 /**
  * getAllCharactersCreatedAfterYear()

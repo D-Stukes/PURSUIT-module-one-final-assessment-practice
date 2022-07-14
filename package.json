@@ -8,5 +8,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "## Assessment Setup",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/D-Stukes/PURSUIT-module-one-final-assessment-practice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/D-Stukes/PURSUIT-module-one-final-assessment-practice/issues"
+  },
+  "homepage": "https://github.com/D-Stukes/PURSUIT-module-one-final-assessment-practice#readme"
 }
